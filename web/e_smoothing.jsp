@@ -51,7 +51,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="navbar-brand" href="index.html">泸州市<span>医保基金</span>监督平台</a>
+       <a class="navbar-brand" href="index.jsp">泸州市<span>医保基金</span>监督平台</a>
       <p>Luzhou Medical Fund Supervisory Platform</p>
     </div>
     <div class="navbar-collapse collapse">

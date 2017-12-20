@@ -369,7 +369,6 @@
             <li><i class="fa fa-angle-right"></i><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><i class="fa fa-angle-right"></i><a href="career.html">We are Hiring</a></li>
             <li><i class="fa fa-angle-right"></i><a href="terms.html">Term & condition</a></li>
-
           </ul>
         </div>
       </div>
@@ -398,7 +397,6 @@
   </div>
 </footer>
 <!--small footer end-->
-
 <!-- js placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>

@@ -1,6 +1,7 @@
 package Action;
 
 import Dao.MybatisUtils;
+import Entity.HospitalizationDetail;
 import Entity.Outlier;
 import Service.IOutlier;
 import com.opensymphony.xwork2.ActionSupport;
@@ -18,16 +19,32 @@ public class OutlierAction extends ActionSupport implements ServletRequestAware 
     private IOutlier dao=s.getMapper(IOutlier.class);
     //get
     private List<Outlier> outliers;
+    private List<HospitalizationDetail> hospitalizationDetails;
     //set
     private HttpServletRequest request;
 
-    public String init(){
-        outliers=dao.init();
+
+    public String query(){
+        String hospitalization_num = request.getParameter("hospitalization_num");
+        if (hospitalization_num.equals("")){
+            outliers = dao.init();
+        }else{
+            outliers = dao.query(hospitalization_num);
+        }
+
         return SUCCESS;
     }
-
+    public String details(){
+        String hospitalization_num = request.getParameter("hospitalization_num");
+        hospitalizationDetails = dao.getDetail(hospitalization_num);
+        return SUCCESS;
+    }
     public List<Outlier> getOutliers() {
         return outliers;
+    }
+
+    public List<HospitalizationDetail> getHospitalizationDetails() {
+        return hospitalizationDetails;
     }
 
     public void setServletRequest(HttpServletRequest httpServletRequest) {

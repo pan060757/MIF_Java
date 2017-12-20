@@ -162,7 +162,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-sm-4">
-        <h1>建模方法-灰度预测模型</h1>
+        <h1>建模方法-ARIMA</h1>
       </div>
       <div class="col-lg-8 col-sm-8">
         <ol class="breadcrumb pull-right">

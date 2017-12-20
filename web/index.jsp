@@ -129,7 +129,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="blog.html">异常检测</a>
+              <a href="outlier_detection.jsp">异常检测</a>
             </li>
             <li>
               <a href="blog-two-col.html">Blog two column</a>

@@ -1,6 +1,8 @@
 package Service;
 
+import Entity.HospitalizationDetail;
 import Entity.Outlier;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -9,6 +11,7 @@ import java.util.List;
  */
 public interface IOutlier {
     List<Outlier> init();
-
+    List<Outlier> query(@Param("hospitalization_num")String hospitalization_num);
+    List<HospitalizationDetail> getDetail(@Param("hospitalization_num")String hospitalization_num);
 }
 
