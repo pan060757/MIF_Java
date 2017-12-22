@@ -65,10 +65,10 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="typography.html">基金收入模块</a>
+              <a href="payment.jsp">基金收入模块</a>
             </li>
             <li>
-              <a href="button.html">基金支出模块</a>
+              <a href="expense.jsp">基金支出模块</a>
             </li>
           </ul>
         </li>

@@ -58,6 +58,7 @@ function plot_statistic() {
                     if (selectBy == 'state') {
                         var working = [];     ///只展示其中的几列
                         var retired = [];
+                        alert("hello")
                         for (var i = 0; i < data.tts.length; i++) {
                             working.push(data.tts[i].working);
                             retired.push(data.tts[i].retired);
