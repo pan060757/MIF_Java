@@ -15,7 +15,7 @@
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
-    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+    <title>Luzhou Medical Fund Supervisory Platform</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <!-- FONT AWESOME STYLE  -->
@@ -114,7 +114,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="blog.html">异常检测</a>
+                            <a href="outlier_detection.jsp">异常检测</a>
                         </li>
                         <li>
                             <a href="blog-two-col.html">Blog two column</a>
@@ -133,7 +133,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="gm1.jsp">灰度预测模型</a>
+                            <a href="gm11.jsp">灰度预测模型</a>
                         </li>
                         <li>
                             <a href="e_smoothing.jsp">指数平滑法</a>

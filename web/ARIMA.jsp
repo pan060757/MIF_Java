@@ -6,14 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: songsong
-  Date: 2017/12/5
-  Time: 20:22
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +16,7 @@
   <meta name="keywords" content="Bootstrap 3, Template, Theme, Responsive, Corporate, Business">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Acme | Home</title>
+  <title>Luzhou Medical Fund Supervisory Platform</title>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -121,7 +113,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="blog.html">异常检测</a>
+              <a href="outlier_detection.jsp">异常检测</a>
             </li>
             <li>
               <a href="blog-two-col.html">Blog two column</a>
@@ -140,7 +132,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="gm1.jsp">灰度预测模型</a>
+              <a href="gm11.jsp">灰度预测模型</a>
             </li>
             <li>
               <a href="e_smoothing.jsp">指数平滑法</a>
@@ -457,67 +449,6 @@
 </div>
 <!--container end-->
 
-<!--footer start-->
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
-        <h1>contact info</h1>
-        <address>
-          <p><i class="fa fa-home pr-10"></i>Address: No.XXXXXX street</p>
-          <p><i class="fa fa-globe pr-10"></i>Mars city, Country</p>
-          <p><i class="fa fa-mobile pr-10"></i>Mobile : (123) 456-7890</p>
-          <p><i class="fa fa-phone pr-10"></i>Phone : (123) 456-7890</p>
-          <p><i class="fa fa-envelope pr-10"></i>Email : <a href="javascript:;">support@example.com</a></p>
-        </address>
-      </div>
-      <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
-        <h1>latest tweet</h1>
-        <div id="owl-slide">
-          <div class="tweet-box">
-            <i class="fa fa-twitter"></i>
-            <em>Please follow <a href="javascript:;">@example</a> for all future updates of us! <a href="javascript:;">twitter.com/acme</a></em>
-          </div>
-          <div class="tweet-box">
-            <i class="fa fa-twitter"></i>
-            <em>Please follow <a href="javascript:;">@example</a> for all future updates of us! <a href="javascript:;">twitter.com/acme</a></em>
-          </div>
-          <div class="tweet-box">
-            <i class="fa fa-twitter"></i>
-            <em>Please follow <a href="javascript:;">@example</a> for all future updates of us! <a href="javascript:;">twitter.com/acme</a></em>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-3">
-        <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
-          <h1>Our Company</h1>
-          <ul class="page-footer-list">
-
-            <li><i class="fa fa-angle-right"></i><a href="about.html">About Us</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="faq.html">Support</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="service.html">Service</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="career.html">We are Hiring</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="terms.html">Term & condition</a></li>
-
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-3">
-
-        <div class="text-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".7s">
-          <h1>Text Widget</h1>
-          <p>
-            This is a text widget.Lorem ipsum dolor sit amet.
-            This is a text widget.Lorem ipsum dolor sit amet
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</footer>
-<!-- footer end -->
 <!--small footer start -->
 <footer class="footer-small">
   <div class="container">

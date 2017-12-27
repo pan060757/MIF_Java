@@ -8,7 +8,7 @@
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
-    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+    <title>Luzhou Medical Fund Supervisory Platform</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <!-- FONT AWESOME STYLE  -->
@@ -36,6 +36,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html">泸州市<span>医保基金</span>监督平台</a>
+
             <p>Luzhou Medical Fund Supervisory Platform</p>
         </div>
         <div class="navbar-collapse collapse">
@@ -132,61 +133,68 @@
     </div>
 </header>
 <!--header end-->
-<!-- MENU SECTION END-->
-<div class="content-wrapper">
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-4">
+                <h1>基金缴费模型</h1>
+            </div>
+            <div class="col-lg-8 col-sm-8">
+                <ol class="breadcrumb pull-right">
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--container start-->
+<div class="registration-bg">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-8 col-xs-12">
-                <div class="panel-body">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            基金缴费模型
+                <form class="form-signin wow fadeInUp" action="">
+                    <h2 class="form-signin-heading">收入预测</h2>
+                    <div class="login-wrap">
+                        <div class="registration">
+                            可调节下述指标，观测基金收入变化
                         </div>
-                        <span class="panel-body">
-                            <form id="queryPredict">
-                                <span class="label1">缴费上限：
-                                    <input class="input2" id="ceil" value='3' type="text"/>倍平均工资</span></br>
-                                <span class="label1">
-                                    缴费下限：
-                                    <input class="input2" id="floor" value="1" type="text"/>倍平均工资
-                                </span><br/>
-                                <span class="label1">
-                                    缴费比例：
-                                    <input id="ratio" class="input2" value="9" type="text"/>%</span><br/><br/>
-                                <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
-                                       value="查询"/>
-                                <button type="reset" class="btn btn-primary">重置</button>
-                            </form>
-                            </span>
+                        <br/>
+                        <input type="text" class="form-control" id="ceil" placeholder="缴费上限(几倍平均工资)" autofocus="">
+                        <input type="text" class="form-control" id="floor" placeholder="缴费下限(几倍平均工资)" autofocus="">
+                        <input type="text" class="form-control" id="ratio" placeholder="缴费比率（%）" autofocus="">
+                        <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
+                               value="查询"/>
+                        <button type="reset" class="btn btn-primary">重置</button>
+                    </div>
+                </form>
+                <!--图形展示-->
+            </div>
+                <div class="col-md-6 col-sm-4 col-xs-12">
+                    <div id="detail-information">
                     </div>
                 </div>
             </div>
-            <!--图形展示-->
-            <div class="col-md-6 col-sm-4 col-xs-12">
-                <div id="detail-information">
+        </div>
+    </div>
+        <!--container end-->
+
+        <!--small footer start -->
+        <footer class="footer-small">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12" align="center">
+                        <div class="copyright"><p>&copy; Copyright -泸州市医疗保险管理局</p></div>
+                    </div>
                 </div>
             </div>
-
-        </div>
-
-    </div>
-</div>
-<!-- CONTENT-WRAPPER SECTION END-->
-<section class="footer-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12" align="center">
-                Copyright &copy;泸州市医疗保险管理局.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script src="assets/js/jquery-1.10.2.js"></script>
-<!-- BOOTSTRAP SCRIPTS  -->
-<script src="assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="js/charge.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/spider.js"></script>
-<script type="text/javascript" src="js/plot_forecast.js"></script>
+        </footer>
+        <!--small footer end-->
+        <script src="assets/js/jquery-1.10.2.js"></script>
+        <!-- BOOTSTRAP SCRIPTS  -->
+        <script src="assets/js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/charge.js" charset="utf-8"></script>
+        <script type="text/javascript" src="js/spider.js"></script>
+        <script type="text/javascript" src="js/plot_forecast.js"></script>
 </body>
 </html>

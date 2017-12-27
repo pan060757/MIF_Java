@@ -1,13 +1,35 @@
 <%--
   Created by IntelliJ IDEA.
-  User: song
-  Date: 2017/3/28
-  Time: 16:57
+  User: songsong
+  Date: 2017/12/22
+  Time: 19:01
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>统计报表页面</title>
+    <link rel="stylesheet" href="css/style.default.css" type="text/css" />
+    <script type="text/javascript" src="js/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.flot.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.flot.pie.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.flot.resize.min.js"></script>
+    <script type="text/javascript" src="js/custom/general.js"></script>
+    <script type="text/javascript" src="js/custom/charts.js"></script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/plugins/excanvas.min.js"></script><![endif]-->
+    <!--[if IE 9]>
+    <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
+    <![endif]-->
+    <!--[if IE 8]>
+    <link rel="stylesheet" media="screen" href="css/style.ie8.css"/>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="js/plugins/css3-mediaqueries.js"></script>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta name="description" content=""/>
@@ -15,27 +37,36 @@
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
-    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+    <title>Luzhou Medical Fund Supervisory Platform</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <!-- FONT AWESOME STYLE  -->
+    <link href="css/common.css" rel="stylesheet"/>
     <link href="css/font-awesome.css" rel="stylesheet"/>
     <!-- CUSTOM STYLE  -->
-    <link href="css/common.css" rel="stylesheet"/>
+
     <link href="css/spider.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
-    <script type="text/javascript" src="js/common.js"></script>
     <!-- GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="css/ui.jqgrid.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css"/>
+    <link rel="stylesheet" type="text/css" href="css/theme.css"/>
 
     <script type="text/javascript" src="js/echarts.common.min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
-    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/sub-menu.js"></script>
+    <script type="text/javascript" src="js/grid.locale-cn.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.jqGrid.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/echarts.js"></script>
 
+
 </head>
-<body>
-<!--header start-->
+
+<body onload="load()">
 <header class="head-section">
     <div class="navbar navbar-default navbar-static-top container">
         <div class="navbar-header">
@@ -44,7 +75,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.jsp">泸州市<span>医保基金</span>监督平台</a>
+            <a class="navbar-brand" href="index.html">泸州市<span>医保基金</span>监督平台</a>
             <p>Luzhou Medical Fund Supervisory Platform</p>
         </div>
         <div class="navbar-collapse collapse">
@@ -106,7 +137,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="blog.html">异常检测</a>
+                            <a href="outlier_detection.jsp">异常检测</a>
                         </li>
                         <li>
                             <a href="blog-two-col.html">Blog two column</a>
@@ -140,54 +171,92 @@
         </div>
     </div>
 </header>
-<!--header end-->
 
-<div class="content-wrapper">
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
     <div class="container">
         <div class="row">
-            <div class="col-md-5 col-sm-5 col-xs-12">
-                <div class="panel-body">
-                    <form id="queryPredict" name="form1">
-                        <span style="font-size:20px">选择保险类型：</span>
-                        <select id="identity" class="form-control select_style">
-                            <option></option>
-                            <option value="1">城镇职工</option>
-                            <option value="2">城镇居民</option>
-                        </select>
-                        <span style="font-size:20px">选择内容：</span>
-                        <select name="totalTrend" id="totalTrend" class="form-control select_style"
-                                onChange="getCity()">
-                            <option></option>
-                            <option value="totalTrend">总体趋势</option>
-                            <option value="ageGroup">参保人群细分</option>
-                        </select>
-                        <span style="font-size:20px">选择查看：</span>
-                        <select id="selectBy" name="selectBy" class="form-control select_style"
-                                style="width:200px;margin-left: 100px">
-                        </select>
-                        <input id="query" class="btn" type="button" value="查询" onclick="plot_statistic()"
-                               style="font-size: 20px; margin-left: 100px;margin-top:20px "/>
-                    </form>
-                </div>
+            <div class="col-lg-4 col-sm-4">
+                <h1>汇总分析模块 — 基金收入</h1>
             </div>
-            <!--图形展示-->
-            <div class="col-md-7 col-sm-7 col-xs-12">
-                <div id="detail-information" class="plotsize">
-                </div>
+            <div class="col-lg-8 col-sm-8">
+                <ol class="breadcrumb pull-right">
+                </ol>
             </div>
         </div>
     </div>
 </div>
-<!-- CONTENT-WRAPPER SECTION END-->
-<section class="footer-section">
+<!--breadcrumbs end-->
+    <div class="contentwrapper">
+        <div class="text-center feature-head wow fadeInDown">
+        <h1 class="">
+            总体趋势
+        </h1>
+     </div>
+        <div id="charts" class="subcontent">
+            <div class="one_half">
+                <div class="contenttitle2">
+                    <h3>基金收入与支出(单位：万元)</h3>
+                </div><!--contenttitle-->
+                <br />
+                <div id="charge_cost" style="height:300px;"></div>
+            </div><!--one_half-->
+            <div class="one_half last">
+                <div class="contenttitle2">
+                    <h3>平均工资</h3>
+                </div><!--contenttitle-->
+                <br />
+                <div id="avgWage" style="height:300px;"></div>
+            </div><!--one_half last-->
+
+            <br clear="all" /><br />
+
+            <div class="one_half">
+                <div class="contenttitle2">
+                    <h3>参保人数</h3>
+                </div><!--contenttitle-->
+                <br />
+                <div id="numbers" style="height:300px;"></div>
+                <br />
+            </div><!--one_half-->
+
+            <div class="one_half last">
+                <div class="contenttitle2">
+                    <h3>在职离退人数</h3>
+                </div><!--contenttitle-->
+                <br />
+                <div id="working_retired" style="height: 300px;"></div>
+            </div><!--one_half last-->
+
+            <br clear="all" />
+
+        </div><!--#charts-->
+
+        <div id="statistics" class="subcontent">
+            <div class="text-center feature-head wow fadeInDown">
+                <h1 class="">
+                    参保年龄结构变化
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div id="age_group" style="height: 300px;"></div>
+                </div>
+        </div><!--#statistics-->
+    </div><!--contentwrapper-->
+</div><!--bodywrapper-->
+
+<!--small footer start -->
+<footer class="footer-small">
     <div class="container">
         <div class="row">
             <div class="col-md-12" align="center">
-                Copyright &copy;泸州市医疗保险管理局.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
+                <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
             </div>
         </div>
     </div>
-</section>
+</footer>
+<!--small footer end-->
 <script type="text/javascript" src="js/payment.js" charset="utf-8"></script>
 </body>
 </html>

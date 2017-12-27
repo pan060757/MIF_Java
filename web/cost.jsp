@@ -8,7 +8,7 @@
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
-    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+    <title>Luzhou Medical Fund Supervisory Platform</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <!-- FONT AWESOME STYLE  -->
@@ -36,6 +36,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="index.html">泸州市<span>医保基金</span>监督平台</a>
+
             <p>Luzhou Medical Fund Supervisory Platform</p>
         </div>
         <div class="navbar-collapse collapse">
@@ -97,7 +98,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="blog.html">异常检测</a>
+                            <a href="outlier_detection.jsp">异常检测</a>
                         </li>
                         <li>
                             <a href="blog-two-col.html">Blog two column</a>
@@ -116,7 +117,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="gm1.jsp">灰度预测模型</a>
+                            <a href="gm11.jsp">灰度预测模型</a>
                         </li>
                         <li>
                             <a href="e_smoothing.jsp">指数平滑法</a>
@@ -132,80 +133,89 @@
     </div>
 </header>
 <!--header end-->
-
-<div class="content-wrapper">
+<div class="breadcrumbs">
     <div class="container">
         <div class="row">
-            <div class="col-md-7 col-sm-7 col-xs-12">
-                <div class="panel-body">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            医疗待遇支付模型
-                        </div>
-                        <div class="panel-body">
-                            <form id="queryPredict">
+            <div class="col-lg-4 col-sm-4">
+                <h1>医疗待遇支付模型</h1>
+            </div>
+            <div class="col-lg-8 col-sm-8">
+                <ol class="breadcrumb pull-right">
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--container start-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 col-sm-7 col-xs-12">
+            <div class="panel-body">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        支出预测
+                    </div>
+                    <div class="panel-body">
+                        <form id="queryPredict">
           <span class="label1">一级在职人员：起付线
           <input type="text" id="line10" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio10" value="90" class="input2">%</span>
-            <br/>
+                            <br/>
             <span class="label1">一级退休人员：起付线
           <input type="tet" id="line11" value="400" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio11" value="96" class="input2">%</span>
-                                <br/>
+                            <br/>
           <span class="label1">二级在职人员：起付线
           <input type="text" id="line20" value="600" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio20" value="85" class="input2">%</span>
-            <br/>
+                            <br/>
           <span class="label1">二级退休人员：起付线
           <input type="text" id="line21" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio21" value="92" class="input2">%</span>
-                                <br/>
+                            <br/>
           <span class="label1">三级在职人员：起付线
           <input type="text" id="line30" value="700" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio30" value="80" class="input2">%</span>
-            <br/>
+                            <br/>
           <span class="label1">三级退休人员：起付线
           <input type="text" id="line31" value="600" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio31" value="88" class="input2">%</span>
-                                <br/>
+                            <br/>
           <span class="label1">社区在职人员：起付线
           <input type="text" id="line40" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio40" value="90" class="input2">%</span>
-            <br/>
+                            <br/>
           <span class="label1">社区退休人员：起付线
           <input type="text" id="line41" value="400" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio41" value="96" class="input2">%</span>
-                                <br/>
-                                <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
-                                       value="查询"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button type="reset" class="btn btn-primary">重置</button>
-                            </form>
-                        </div>
+                            <br/>
+                            <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
+                                   value="查询"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="reset" class="btn btn-primary">重置</button>
+                        </form>
                     </div>
-
                 </div>
             </div>
-            <!--图形展示-->
-            <div class="col-md-5 col-sm-5 col-xs-5">
-                <div id="detail-information">
-
-                </div>
-            </div>
-
         </div>
-
+        <div class="col-md-5 col-sm-5 col-xs-12">
+            <div id="detail-information">
+            </div>
+        </div>
     </div>
 </div>
-<!-- CONTENT-WRAPPER SECTION END-->
-<section class="footer-section">
+<!--container end-->
+<!--small footer start -->
+<footer class="footer-small">
     <div class="container">
         <div class="row">
             <div class="col-md-12" align="center">
-                Copyright &copy;泸州市医疗保险管理局.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
+                <div class="copyright"><p>&copy; Copyright -泸州市医疗保险管理局</p></div>
             </div>
         </div>
     </div>
-</section>
+</footer>
+<!--small footer end-->
 
 <script src="assets/js/jquery-1.10.2.js"></script>
 <!-- BOOTSTRAP SCRIPTS  -->

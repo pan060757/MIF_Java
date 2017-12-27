@@ -23,7 +23,7 @@
   <!--[if IE]>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <![endif]-->
-  <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+  <title>Luzhou Medical Fund Supervisory Platform</title>
   <!-- BOOTSTRAP CORE STYLE  -->
   <link href="css/bootstrap.css" rel="stylesheet"/>
   <!-- FONT AWESOME STYLE  -->
@@ -144,6 +144,23 @@
     </div>
   </div>
 </header>
+
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-sm-4">
+        <h3>收支走向预测</h3>
+      </div>
+      <div class="col-lg-8 col-sm-8">
+        <ol class="breadcrumb pull-right">
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!--breadcrumbs end-->
+
 <div  id="content2">
   <!--切换标签页面-->
     <div id="source_table_content" style="">
@@ -201,12 +218,14 @@
 <!--small footer start -->
 <footer class="footer-small">
   <div class="container">
-    <div class="col-md-12">
-      <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
+    <div class="row">
+      <div class="col-md-12" align="center">
+        <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
+      </div>
     </div>
   </div>
-  </div>
 </footer>
+<!--small footer end-->
 
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>

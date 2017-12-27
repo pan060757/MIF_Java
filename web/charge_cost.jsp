@@ -8,7 +8,7 @@
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
-    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+    <title>Luzhou Medical Fund Supervisory Platform</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <!-- FONT AWESOME STYLE  -->
@@ -97,7 +97,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="blog.html">异常检测</a>
+                            <a href="outlier_detection.jsp">异常检测</a>
                         </li>
                         <li>
                             <a href="blog-two-col.html">Blog two column</a>
@@ -116,7 +116,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="gm1.jsp">灰度预测模型</a>
+                            <a href="gm11.jsp">灰度预测模型</a>
                         </li>
                         <li>
                             <a href="e_smoothing.jsp">指数平滑法</a>
@@ -222,16 +222,17 @@
 </div>
 </div>
 
-<!-- CONTENT-WRAPPER SECTION END-->
-<section class="footer-section">
+<!--small footer start -->
+<footer class="footer-small">
     <div class="container">
         <div class="row">
             <div class="col-md-12" align="center">
-                Copyright &copy; 泸州市医疗保险管理局.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
+                <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
             </div>
         </div>
     </div>
-</section>
+</footer>
+<!--small footer end-->
 
 <script src="assets/js/jquery-1.10.2.js"></script>
 <!-- BOOTSTRAP SCRIPTS  -->
