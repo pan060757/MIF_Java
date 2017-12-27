@@ -112,15 +112,6 @@
             <li>
               <a href="blog.html">异常检测</a>
             </li>
-            <li>
-              <a href="blog-two-col.html">Blog two column</a>
-            </li>
-            <li>
-              <a href="blog-detail.html">Blog Single Image</a>
-            </li>
-            <li>
-              <a href="blog-detail-video.html">Blog single video</a>
-            </li>
           </ul>
         </li>
         <li class="dropdown">
