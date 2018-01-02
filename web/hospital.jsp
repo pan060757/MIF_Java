@@ -114,7 +114,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="outlier_detection.jsp">异常检测</a>
+              <a href="outlier_detection.jsp">住院异常检测</a>
             </li>
           </ul>
         </li>
@@ -200,7 +200,7 @@
                 详细信息
               </div>
               <span class="label1">保险：</span>
-              <select id="identity1" class="select_relative">
+              <select id="identity1" class="select_relative" name="identity1">
                 <option value="1">职工</option>
                 <option value="2">居民</option>
               </select>
@@ -250,27 +250,13 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-6 col-sm-6 col-xs-12">
-    <div id="detail-information1">
-    </div>
-  </div>
-  <div class="col-md-6 col-sm-6 col-xs-12">
-    <div id="detail-information">
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
 <!--small footer start -->
 <footer class="footer-small">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12" align="center">
-        <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
-      </div>
+    <div class="col-md-12">
+      <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
     </div>
+  </div>
   </div>
 </footer>
 <!--small footer end-->

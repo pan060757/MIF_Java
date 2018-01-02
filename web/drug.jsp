@@ -114,7 +114,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="outlier_detection.jsp">异常检测</a>
+              <a href="outlier_detection.jsp">住院异常检测</a>
             </li>
           </ul>
         </li>
@@ -154,7 +154,7 @@
                 top10
               </div>
               <div class="panel-body">
-                <form id="queryPredict">
+                <form id="queryPredict" action="disease_details.jsp" method="get">
                   <span class="label1">保险：</span>
                   <select id="identity" class="select_relative">
                     <option value="1">职工</option>
@@ -210,11 +210,11 @@
                 background-color: #ffff00
               }</style>
               <input type="text" id="drugname" class="input2">
-              <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
+              <input id="query2" class="query" type="submit" onclick="selectResult()" value="查询"/>
               <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
-
               <div class="grid_relative1">
                 <table id="grid-table2"></table>
+
                 <!--jqGrid 浏览导航栏所在-->
                 <div id="grid-pager2"></div>
               </div>
@@ -224,17 +224,6 @@
       </div>
     </div>
   </div>
-</div>
-<div id="content2">
-  <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <div id="detail-information">
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
 </div>
 
 <footer class="footer-small">

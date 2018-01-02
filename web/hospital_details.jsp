@@ -1,20 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
-  User: song
-  Date: 2017/1/13
-  Time: 14:57
+  User: songsong
+  Date: 2018/1/2
+  Time: 16:14
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: sirius
-  Date: 16-7-26
-  Time: 下午5:16
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="zh-cn">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -27,19 +19,31 @@
   <!-- BOOTSTRAP CORE STYLE  -->
   <link href="css/bootstrap.css" rel="stylesheet"/>
   <!-- FONT AWESOME STYLE  -->
+  <link href="css/common.css" rel="stylesheet"/>
   <link href="css/font-awesome.css" rel="stylesheet"/>
   <!-- CUSTOM STYLE  -->
-  <link href="css/common.css" rel="stylesheet"/>
+
   <link href="css/spider.css" rel="stylesheet"/>
   <link href="css/style.css" rel="stylesheet"/>
-  <script type="text/javascript" src="js/common.js"></script>
   <!-- GOOGLE FONT -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
-  <script type="text/javascript" src="js/echarts.common.min.js"></script>
-  <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/ui.jqgrid.css"/>
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css"/>
+  <link rel="stylesheet" type="text/css" href="css/theme.css"/>
 
-</head><body>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/sub-menu.js"></script>
+  <script type="text/javascript" src="js/grid.locale-cn.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/jquery.jqGrid.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/echarts.common.min.js"></script>
+
+
+</head>
+<body onload="loadDetails()">
+<!--header start-->
 <header class="head-section">
   <div class="navbar navbar-default navbar-static-top container">
     <div class="navbar-header">
@@ -110,7 +114,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="blog.html">住院异常检测</a>
+              <a href="outlier_detection.jsp">住院异常检测</a>
             </li>
           </ul>
         </li>
@@ -135,77 +139,48 @@
     </div>
   </div>
 </header>
+<!--header end-->
 
-<!--breadcrumbs start-->
-<div class="breadcrumbs">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-sm-4">
-        <h3>收支走向预测</h3>
-      </div>
-      <div class="col-lg-8 col-sm-8">
-        <ol class="breadcrumb pull-right">
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
-<!--breadcrumbs end-->
-
-<div  id="content2">
+</br>
+<!--切换标签页面-->
+<div id="content1">
   <!--切换标签页面-->
-    <div id="source_table_content" style="">
-      <div class="wrap" >
-        <form id="queryPredict">
-          <!--右部显示详细信息-->
-            <div id="detail-information">
+
+
+  <div id="manager">
+    <div id="source_table_content">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="panel-body">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                医院具体信息&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="hospital.jsp">返回</a>
+              </div>
+              <div class="grid_relative1">
+                <table id="grid-table2"></table>
+                <!--jqGrid 浏览导航栏所在-->
+                <div id="grid-pager2"></div>
+              </div>
             </div>
-          <%--<span style="font-size:25px" >选择模型：</span>--%>
-          <%--<select id="select_model" class="form-control select_style" ></select>--%>
-          <%--<span style="font-size:25px">选择变量：</span>--%>
-          <%--<select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>--%>
-          <%--<input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>--%>
-        </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-  <script src="js/echarts.common.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $.ajax({
-        url:'/MIF/init',
-        type:'get',
-        dataType:'json',
-        success:function(data){
-          var model_select=$("#select_model");
-          $.each(data.modelList,function(i,item){
-            model_select.append("<option style='font-size: 20px' value='"+item.key+"'>"+item.value+"</option>");
-          });
-          var model_select=$("#select_variable");
-          $.each(data.variableList,function(i,item){
-            model_select.append("<option value='"+item.key+"'>"+item.value+"</option>");
-          });
-        }
-      });
-
-//            var model_selected=$("#select_model").val();
-      var model_selected=1;//1=gm11,2=holtwinter,3=multiregression,4=arima
-
-      var params="&model="+model_selected;
-      $.ajax({
-        url:'/MIF/query',
-        type:'get',
-        data:params,
-        dataType:'json',
-        success:function(data){
-          $(data).each(function(i,value){
-            plot(value);
-          });
-        }
-      });
-
-    });
-  </script>
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div id="detail-information">
+    </div>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div id="detail-information1">
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
 <!--small footer start -->
 <footer class="footer-small">
   <div class="container">
@@ -217,8 +192,10 @@
 </footer>
 <!--small footer end-->
 
+<script type="text/javascript" src="js/hospital_details.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>
-
+<script type="text/javascript" src="js/display.js"></script>
 </body>
 </html>
+

@@ -98,7 +98,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="outlier_detection.jsp">异常检测</a>
+                            <a href="outlier_detection.jsp">住院异常检测</a>
                         </li>
                     </ul>
                 </li>
@@ -146,6 +146,7 @@
             <div class="col-md-6 col-sm-8 col-xs-12">
                 <form class="form-signin wow fadeInUp" action="">
                     <h2 class="form-signin-heading">收入预测</h2>
+
                     <div class="login-wrap">
                         <div class="registration">
                             可调节下述指标，观测基金收入变化
@@ -161,31 +162,29 @@
                 </form>
                 <!--图形展示-->
             </div>
-                <div class="col-md-6 col-sm-4 col-xs-12">
-                    <div id="detail-information">
-                    </div>
+            <div class="col-md-6 col-sm-4 col-xs-12">
+                <div id="detail-information">
                 </div>
             </div>
         </div>
     </div>
-        <!--container end-->
+</div>
+<!--container end-->
 
-        <!--small footer start -->
-        <footer class="footer-small">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12" align="center">
-                        <div class="copyright"><p>&copy; Copyright -泸州市医疗保险管理局</p></div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--small footer end-->
-        <script src="assets/js/jquery-1.10.2.js"></script>
-        <!-- BOOTSTRAP SCRIPTS  -->
-        <script src="assets/js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/charge.js" charset="utf-8"></script>
-        <script type="text/javascript" src="js/spider.js"></script>
-        <script type="text/javascript" src="js/plot_forecast.js"></script>
+<footer class="footer-small">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="copyright"><p>&copy; Copyright -泸州市医疗保险管理局</p></div>
+        </div>
+    </div>
+    </div>
+</footer>
+<!--small footer end-->
+<script src="assets/js/jquery-1.10.2.js"></script>
+<!-- BOOTSTRAP SCRIPTS  -->
+<script src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/charge.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/spider.js"></script>
+<script type="text/javascript" src="js/plot_forecast.js"></script>
 </body>
 </html>

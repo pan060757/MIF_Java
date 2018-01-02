@@ -114,7 +114,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="outlier_detection.jsp">异常检测</a>
+                            <a href="outlier_detection.jsp">住院异常检测</a>
                         </li>
                     </ul>
                 </li>

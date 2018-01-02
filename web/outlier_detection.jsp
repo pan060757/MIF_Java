@@ -15,7 +15,7 @@
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
-    <title>Luzhou Medical Fund Supervisory Platform</title>
+    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <!-- FONT AWESOME STYLE  -->
@@ -30,15 +30,14 @@
     <link rel="stylesheet" type="text/css" href="css/ui.jqgrid.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css"/>
     <link rel="stylesheet" type="text/css" href="css/theme.css"/>
-
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/sub-menu.js"></script>
     <script type="text/javascript" src="js/grid.locale-cn.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/jquery.jqGrid.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/echarts.common.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 
 </head>
@@ -66,10 +65,10 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="payment.jsp">基金收入模块</a>
+                            <a href="typography.html">基金收入模块</a>
                         </li>
                         <li>
-                            <a href="expense.jsp">基金支出模块</a>
+                            <a href="button.html">基金支出模块</a>
                         </li>
                     </ul>
                 </li>
@@ -114,7 +113,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="outlier_detection.jsp">异常检测</a>
+                            <a href="outlier_detection.jsp">住院异常检测</a>
                         </li>
                     </ul>
                 </li>
@@ -124,7 +123,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="gm11.jsp">灰度预测模型</a>
+                            <a href="gm1.jsp">灰度预测模型</a>
                         </li>
                         <li>
                             <a href="e_smoothing.jsp">指数平滑法</a>
@@ -155,6 +154,11 @@
                             </div>
                             <div class="panel-body">
                                 <form id="queryPredict">
+                                    <span class="label1">病种：</span>
+                                    <select id="disease" class="select_relative">
+                                        <option value="1">高血压</option>
+                                        <option value="2">糖尿病</option>
+                                    </select>
                                     <span class="label1">按住院编号：</span>
                                     <style>.ui-autocomplete {
                                         max-height: 100px;
@@ -164,6 +168,16 @@
                                         background-color: #ffff00
                                     }</style>
                                     <input type="text" id="hospitalization_num" class="input" maxlength="50">
+                                    <span class="label1">按医院编号：</span>
+                                    <style>.ui-autocomplete {
+                                        max-height: 100px;
+                                        overflow-y: auto; /* 防止水平滚动条 */
+                                        overflow-x: auto;
+                                        width: 80px;
+                                        background-color: #ffff00
+                                    }</style>
+                                    <input type="text" id="hospital_num" class="input" maxlength="50">
+
                                     <input id="query2" class="query" type="button" onclick="selectResult()"
                                            value="查询"/>
                                     <input id="return" class="query" type="button" onclick="back()" value="返回"/>
@@ -188,9 +202,6 @@
             </div>
         </div>
     </div>
-</div>
-</div>
-</div>
 </div>
 <!--small footer start -->
 <footer class="footer-small">

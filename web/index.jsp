@@ -126,7 +126,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="outlier_detection.jsp">异常检测</a>
+              <a href="outlier_detection.jsp">住院异常检测</a>
             </li>
           </ul>
         </li>
@@ -553,11 +553,12 @@
 <!-- footer end -->
 <!--small footer start -->
 <footer class="footer-small">
-  <div class="container" >
-    <div class="row" >
-        <div class="copyright" style="text-align: center;"><p> &copy; Copyright -泸州市医疗保险管理局</p></div>
+  <div class="container">
+    <div class="col-md-12">
+      <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
     </div>
-    </div>
+  </div>
+  </div>
 </footer>
 <!--small footer end-->
 

@@ -15,7 +15,10 @@
         <typeAlias type="Entity.Forecast" alias="Forecast"/>
         <typeAlias type="Entity.HospitalAD" alias="HospitalAD"/>
         <typeAlias type="Entity.Outlier" alias="Outlier"/>
+        <typeAlias type="Entity.HospitalizationDetail" alias="HospitalizationDetail"/>
     </typeAliases>
+
+
 
     <environments default="development">
 
@@ -23,9 +26,9 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://127.0.0.1:3306/mif"/>
+                <property name="url" value="jdbc:mysql://10.11.6.220:3306/mif"/>
                 <property name="username" value="root"/>
-                <property name="password" value="123"/>
+                <property name="password" value="ecnu105"/>
             </dataSource>
         </environment>
     </environments>
