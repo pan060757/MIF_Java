@@ -16,6 +16,7 @@
   <meta name="keywords" content="Bootstrap 3, Template, Theme, Responsive, Corporate, Business">
   <link rel="shortcut icon" href="img/favicon.png">
 
+
   <title>
     Luzhou Medical Fund Supervisory Platform
   </title>
@@ -24,9 +25,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/theme.css" rel="stylesheet">
   <link href="css/bootstrap-reset.css" rel="stylesheet">
-  <!--
-<link href="css/bootstrap.min.css" rel="stylesheet">
--->
+
 
   <!--external css-->
   <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -125,7 +124,7 @@
             </li>
             <li>
               <a href="drug.jsp">药品</a>
-            </li>
+            </li>f
           </ul>
         </li>
         <li class="dropdown">
@@ -135,6 +134,9 @@
           <ul class="dropdown-menu">
             <li>
               <a href="outlier_detection.jsp">住院异常检测</a>
+            </li>
+            <li>
+              <a href="hospital_anomaly_detection.jsp">医院异常检测</a>
             </li>
           </ul>
         </li>
@@ -150,6 +152,9 @@
               <a href="e_smoothing.jsp">指数平滑法</a>
             <li>
               <a href="arima.jsp">ARIMA</a>
+            </li>
+            <li>
+              <a href="dbscan.jsp">DBSCAN聚类分析方法</a>
             </li>
           </ul>
         </li>
@@ -289,7 +294,6 @@
     </div>
   </div>
 </div>
-
 
 <!--property start-->
 <div class="property gray-bg">

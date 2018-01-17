@@ -6,9 +6,9 @@
 function selectResult()
 {
     var hospitalization_num=$("#hospitalization_num").val();
-    var hospital_num=$("#hospital_num").val();
+    var hospital_name=$("#hospital_name").val();
 
-    var param="hospitalization_num="+hospitalization_num+'&hospital_num='+hospital_num;
+    var param="hospitalization_num="+hospitalization_num+'&hospital_name='+hospital_name;
     $.ajax({
         url:'/MIF/outliers/query',
         type:'get',
@@ -68,6 +68,12 @@ function selectResult()
                     if(index=='score'&& sortorder=='asc'){             //当点击异常检测按钮时，给出异常值的相关解释
                         $('#myModal').modal('show')          //显示模态框
                     }
+                    else if(index=='percentage'&& sortorder=='asc'){
+                        $('#myModal1').modal('show')          //显示模态框
+                }
+                    else if(index=='percentile'&& sortorder=='asc'){
+                        $('#myModa2').modal('show')          //显示模态框
+                    }
                 },
                 onSelectRow: function(id,status,e){
                     var row = $("#grid-table").jqGrid('getRowData',id);
@@ -86,8 +92,8 @@ function selectResult()
                                 newjson[i].price = data.hospitalizationDetails[i].price;
                                 newjson[i].cnt = data.hospitalizationDetails[i].cnt;
                                 newjson[i].total_fee =data.hospitalizationDetails[i].total_fee;
-                                newjson[i].percentile = data.hospitalizationDetails[i].percentile+'%';
-                                newjson[i].percentage = data.hospitalizationDetails[i].percentage+'%';
+                                newjson[i].percentile = data.hospitalizationDetails[i].percentile;
+                                newjson[i].percentage = data.hospitalizationDetails[i].percentage;
                             }
                             var grid_selector = "#grid-table";
                             var pager_selector = "#grid-pager";
@@ -115,9 +121,18 @@ function selectResult()
                                 altRows: true, //设置为交替行表格,默认为false
                                 loadonce: true,
                                 multiboxonly: true, //是否只能点击复选框多选
-                                autowidth: true //自动宽
+                                autowidth: true,//自动宽
+                                onSortCol: function (index, colindex, sortorder)
+                                {
+                                    //列排序事件，向server传值，值为当前的页数
+                                    if(index=='percentage'&& sortorder=='asc'){
+                                        $('#myModal1').modal('show')          //显示模态框
+                                    }
+                                    else if(index=='percentile'&& sortorder=='asc'){
+                                        $('#myModal2').modal('show')          //显示模态框
+                                    }
+                                }
                             });
-
                             $("#grid-table").jqGrid('navGrid','#grid-pager',{del:false,add:false,edit:false},{},{},{},{multipleSearch:true});
 
                         }

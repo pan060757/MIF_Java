@@ -100,6 +100,9 @@
                         <li>
                             <a href="outlier_detection.jsp">住院异常检测</a>
                         </li>
+                        <li>
+                            <a href="hospital_anomaly_detection.jsp">医院异常检测</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -115,6 +118,9 @@
                         </li>
                         <li>
                             <a href="arima.jsp">ARIMA</a>
+                        </li>
+                        <li>
+                            <a href="dbscan.jsp">DBSCAN聚类分析方法</a>
                         </li>
                     </ul>
                 </li>

@@ -139,6 +139,9 @@
                         <li>
                             <a href="outlier_detection.jsp">住院异常检测</a>
                         </li>
+                        <li>
+                            <a href="hospital_anomaly_detection.jsp">医院异常检测</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -154,6 +157,9 @@
                         </li>
                         <li>
                             <a href="arima.jsp">ARIMA</a>
+                        </li>
+                        <li>
+                            <a href="dbscan.jsp">DBSCAN聚类分析方法</a>
                         </li>
                     </ul>
                 </li>
@@ -218,6 +224,23 @@
                 <br />
                 <div id="working_retired" style="height: 300px;"></div>
             </div><!--one_half last-->
+
+
+            <div class="one_half">
+                <div class="contenttitle2">
+                    <h3>新参保以及退保情况分析</h3>
+                </div><!--contenttitle-->
+                <br />
+                <div id="new_back" style="height: 300px;"></div>
+            </div><!--one_half last-->
+
+            <%--<div class="one_half last">--%>
+                <%--<div class="contenttitle2">--%>
+                    <%--<h3>首次参保情况分析</h3>--%>
+                <%--</div><!--contenttitle-->--%>
+                <%--<br />--%>
+                <%--<div id="first" style="height: 300px;"></div>--%>
+            <%--</div>--%>
 
             <br clear="all" />
 

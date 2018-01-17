@@ -115,6 +115,9 @@
                         <li>
                             <a href="outlier_detection.jsp">住院异常检测</a>
                         </li>
+                        <li>
+                            <a href="hospital_anomaly_detection.jsp">医院异常检测</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -129,6 +132,9 @@
                             <a href="e_smoothing.jsp">指数平滑法</a>
                         <li>
                             <a href="arima.jsp">ARIMA</a>
+                        </li>
+                        <li>
+                            <a href="dbscan.jsp">DBSCAN聚类分析方法</a>
                         </li>
                     </ul>
                 </li>
@@ -167,7 +173,7 @@
                                         background-color: #ffff00
                                     }</style>
                                     <input type="text" id="hospitalization_num" class="input" maxlength="50">
-                                    <span class="label1">按医院编号：</span>
+                                    <span class="label1">按医院名：</span>
                                     <style>.ui-autocomplete {
                                         max-height: 100px;
                                         overflow-y: auto; /* 防止水平滚动条 */
@@ -175,7 +181,7 @@
                                         width: 80px;
                                         background-color: #ffff00
                                     }</style>
-                                    <input type="text" id="hospital_num" class="input" maxlength="50">
+                                    <input type="text" id="hospital_name" class="input" maxlength="50">
 
                                     <input id="query2" class="query" type="button" onclick="selectResult()"
                                            value="查询"/>
@@ -225,6 +231,51 @@
             </div>
             <div class="modal-body">
                 异常值是指该条住院记录可能存在骗保行为的可能性大小，该值越大越有可能存在骗保行为，需要重点关注。
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabe1l">
+                    使用率占比Tips
+                </h4>
+            </div>
+            <div class="modal-body">
+                使用率占比p：有p%的住院（同病种）中使用了该药品或诊疗
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel2">
+                    费用支出同比Tips
+                </h4>
+            </div>
+            <div class="modal-body">
+                费用支出同比p：该药品或诊疗的费用超过了p%的住院（同病种）
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭

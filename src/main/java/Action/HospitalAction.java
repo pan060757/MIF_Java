@@ -1,11 +1,10 @@
 package Action;
 
 import Dao.MybatisUtils;
-import Entity.DiseaseHospital;
-import Entity.Hospital;
-import Entity.HospitalAD;
+import Entity.*;
 import Service.IHospital;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
@@ -22,6 +21,8 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
     private List<Hospital> hospitals;
     private List<DiseaseHospital> diseaseHospitals;
     private List<HospitalAD> hospitalADs;
+    private List<HospitalOutlier> hospitalOutliers;
+    private List<HospitalOutlierDetail> hospitalOutlierDetails;
     //set
     private HttpServletRequest request;
 
@@ -50,6 +51,9 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         condition.setIdentity(identity);
         condition.setYear(year);
         condition.setGrade(grade);
+        if (h_name!=null && !h_name.equals("")) {
+            condition = new Hospital();
+        }
         condition.setH_name(h_name);
 
 
@@ -63,6 +67,42 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         return SUCCESS;
     }
 
+    public String queryOutlierDetail() {
+        String h_name = request.getParameter("h_name");
+        hospitalOutlierDetails = dao.getADDetails(h_name);
+        return SUCCESS;
+    }
+
+    public String queryHospitalOutlier() {
+        //condition
+        int identity=0;
+        if(request.getParameter("identity")!=null){
+            identity=Integer.parseInt(request.getParameter("identity"));
+        }
+        String h_name=request.getParameter("h_name");
+        int year=0;
+        if(request.getParameter("year")!=null){
+            year=Integer.parseInt(request.getParameter("year"));
+        }
+        String grade=request.getParameter("grade");
+        Hospital condition=new Hospital();
+        condition.setIdentity(identity);
+        condition.setYear(year);
+        condition.setGrade(grade);
+        if (h_name!=null && !"".equals(h_name)) {
+            condition = new Hospital();
+        }
+        condition.setH_name(h_name);
+
+        hospitalOutliers = dao.getHospitalOutliers(condition);
+        for (HospitalOutlier h : hospitalOutliers){
+            h.setAvg_hfees();
+            h.setAvg_hgroupfees();
+            h.setAvg_mfees();
+            h.setAvg_mgroupfees();
+        }
+        return SUCCESS;
+    }
     /**
      * orderBy:
      * @return
@@ -141,8 +181,20 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         return hospitalADs;
     }
 
+    public List<HospitalOutlier> getHospitalOutliers() {
+        return hospitalOutliers;
+    }
+
+    public List<HospitalOutlierDetail> getHospitalOutlierDetails() {
+        return hospitalOutlierDetails;
+    }
+
     public static void main(String[] args) {
         HospitalAction h=new HospitalAction();
+        Hospital condition = new Hospital();
+        condition.setH_name("医院1");
+        h.hospitals = h.dao.getHospitals(condition);
+        h.hospitalOutlierDetails = h.dao.getADDetails("00E83D779DB32B01AE1B47736092F7E7");
         List<HospitalAD>hd=h.dao.detectAvgGroup("018FF7841008EAE36262A5C4B78AC483");
         System.out.println();
     }
