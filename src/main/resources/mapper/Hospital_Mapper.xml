@@ -65,7 +65,7 @@
         select h.h_name,h.year,cast(coalesce(h.h_groupfees/h.h_count,0) as decimal(50,2)) as actual,
         ad.predict,ad.error_rate
         from hospital h
-        left join hospitalAD ad on h.h_name=ad.h_name and h.year=ad.year
+        left join hospitalad ad on h.h_name=ad.h_name and h.year=ad.year
         where identity=1 and h.h_name='${h_name}'
         and h.year between 2006 and 2015
         order by h.year

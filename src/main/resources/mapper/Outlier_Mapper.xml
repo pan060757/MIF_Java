@@ -5,7 +5,7 @@
 <mapper namespace="Service.IOutlier">
     <select id="init" resultType="Outlier">
         select * from hospitalization_anomaly_score
-        where hospitalization_num in (select hospitalization_num from HospitalizationDetail)
+        where hospitalization_num in (select hospitalization_num from hospitalizationdetail)
          and score > 0.5
     </select>
     <select id="query" resultType="Outlier">
@@ -24,7 +24,7 @@
     </select>
     <select id="getDetail" resultType="HospitalizationDetail">
         select *
-        from HospitalizationDetail
+        from hospitalizationdetail
         where hospitalization_num='${hospitalization_num}'
     </select>
 </mapper>
