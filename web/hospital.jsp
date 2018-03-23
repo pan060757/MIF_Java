@@ -156,9 +156,6 @@
 </br>
 <!--切换标签页面-->
 <div id="content1">
-  <!--切换标签页面-->
-
-
   <div id="manager">
     <div id="source_table_content">
       <div class="row">

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Service.IWorker">
+        <select id="getWorkers" resultType="Worker">
+                select a.number,a.year,a.age,a.state,a.company,a.sex,a.wage,a.chroic,a.days,a.times,a.single
+                from worker a
+                where 1=1
+                <if test="year !=0"> and a.year=#{year}</if>
+        </select>
+</mapper>

@@ -158,7 +158,6 @@
             <div class="col-md-6 col-sm-8 col-xs-12">
                 <form class="form-signin wow fadeInUp" action="">
                     <h2 class="form-signin-heading">收入预测</h2>
-
                     <div class="login-wrap">
                         <div class="registration">
                             可调节下述指标，观测基金收入变化

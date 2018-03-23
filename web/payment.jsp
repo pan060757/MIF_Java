@@ -180,7 +180,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-4">
-                <h1>汇总分析模块 — 基金收入</h1>
+                <h1>汇总分析模块—基金收入</h1>
             </div>
             <div class="col-lg-8 col-sm-8">
                 <ol class="breadcrumb pull-right">

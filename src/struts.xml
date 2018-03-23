@@ -112,5 +112,9 @@
             <result type="json"></result>
         </action>
     </package>
-
+    <package name="worker" namespace="/worker" extends="json-default">
+        <action name="init" class="Action.WorkerAction" method="init">
+            <result type="json"></result>
+        </action>
+    </package>
 </struts>
